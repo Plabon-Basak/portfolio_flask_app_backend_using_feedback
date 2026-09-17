@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">My Portfolio</h1>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="/contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Hi, I'm a Python Developer</h2>
+        <p>I build web apps, automation tools, and small projects that solve real problems.</p>
+        <a href="/contact" class="btn">Get in Touch</a>
+    </section>
+
+    <section id="about" class="about">
+        <h2>About Me</h2>
+        <p>I enjoy turning ideas into working software. I focus on clean, simple code that is easy to understand and maintain. This portfolio showcases a few of the things I have learned along the way.</p>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Python</li>
+            <li>Flask</li>
+            <li>HTML &amp; CSS</li>
+            <li>JavaScript</li>
+            <li>Pandas &amp; Data Analysis</li>
+            <li>Git &amp; GitHub</li>
+        </ul>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="project-grid">
+            <div class="card">
+                <h3>PDF Merger Tool</h3>
+                <p>A small utility that merges multiple PDF files into one.</p>
+            </div>
+            <div class="card">
+                <h3>Movie Recommender</h3>
+                <p>A collaborative filtering recommender built with cosine similarity.</p>
+            </div>
+            <div class="card">
+                <h3>Personal Diary</h3>
+                <p>A password-protected, encrypted command-line diary.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; <span id="year"></span> My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

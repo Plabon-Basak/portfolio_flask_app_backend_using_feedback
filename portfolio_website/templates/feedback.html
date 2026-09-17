@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback | My Portfolio</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <h1 class="logo">My Portfolio</h1>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/feedback">Feedback</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h2>Feedback Submissions</h2>
+        {% if feedbacks %}
+            <ul class="feedback-list">
+                {% for feedback in feedbacks %}
+                    <li class="feedback-item">
+                        <strong>{{ feedback.name }}</strong> ({{ feedback.email }})
+                        <p>{{ feedback.message }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No feedback yet. Be the first to leave a message!</p>
+        {% endif %}
+    </main>
+
+    <footer>
+        <p>&copy; <span id="year"></span> My Portfolio. All rights reserved.</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
